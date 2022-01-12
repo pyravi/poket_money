@@ -1,0 +1,15 @@
+{% extends 'admin/change_list.html' %}
+{% load humanize %}
+
+{% block result_list %}
+{{ block.super}}
+<div class=”results” style="border: bottom 15px;">
+    <table>
+        <tr style="font-weight:bold; border-top:2px solid #1829bb;">
+            <td> Total of Goal </td>
+            <td> {{ total | intcomma }}  {{ total | intword }}</td>
+
+        </tr>
+    </table>
+</div>
+{% endblock %}
