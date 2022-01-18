@@ -8,16 +8,13 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('expense_app', '0003_category_created_at'),
+        ("expense_app", "0003_category_created_at"),
     ]
 
     operations = [
-        migrations.RenameModel(
-            old_name='Category',
-            new_name='ExpenseCategory',
-        ),
+        migrations.RenameModel(old_name="Category", new_name="ExpenseCategory"),
         migrations.AlterModelOptions(
-            name='expensecategory',
-            options={'verbose_name_plural': 'Expense Categories'},
+            name="expensecategory",
+            options={"verbose_name_plural": "Expense Categories"},
         ),
     ]

@@ -6,19 +6,19 @@ import user_profile.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('user_profile', '0001_initial'),
-    ]
+    dependencies = [("user_profile", "0001_initial")]
 
     operations = [
         migrations.AlterField(
-            model_name='userprofile',
-            name='currency',
-            field=models.CharField(default='INR - Indian Rupee', max_length=255),
+            model_name="userprofile",
+            name="currency",
+            field=models.CharField(default="INR - Indian Rupee", max_length=255),
         ),
         migrations.AlterField(
-            model_name='userprofile',
-            name='profile_pic',
-            field=models.ImageField(blank=True, upload_to=user_profile.models.user_path),
+            model_name="userprofile",
+            name="profile_pic",
+            field=models.ImageField(
+                blank=True, upload_to=user_profile.models.user_path
+            ),
         ),
     ]

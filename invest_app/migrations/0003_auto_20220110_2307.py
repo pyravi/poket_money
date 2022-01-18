@@ -10,30 +10,37 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('invest_app', '0002_auto_20220110_2238'),
+        ("invest_app", "0002_auto_20220110_2238"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Sector',
+            name="Sector",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('sector_name', models.CharField(max_length=150)),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.localtime)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("sector_name", models.CharField(max_length=150)),
+                (
+                    "created_at",
+                    models.DateTimeField(default=django.utils.timezone.localtime),
+                ),
             ],
-            options={
-                'verbose_name_plural': 'Sectors',
-            },
+            options={"verbose_name_plural": "Sectors"},
         ),
-        migrations.RenameField(
-            model_name='stock',
-            old_name='user',
-            new_name='sector',
-        ),
+        migrations.RenameField(model_name="stock", old_name="user", new_name="sector"),
         migrations.AddField(
-            model_name='transaction',
-            name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='auth.user'),
+            model_name="transaction",
+            name="user",
+            field=models.ForeignKey(
+                default=1, on_delete=django.db.models.deletion.CASCADE, to="auth.user"
+            ),
             preserve_default=False,
         ),
     ]

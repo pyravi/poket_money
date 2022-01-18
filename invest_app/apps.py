@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class InvestAppConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'invest_app'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "invest_app"

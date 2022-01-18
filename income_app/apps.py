@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class IncomeAppConfig(AppConfig):
-    name = 'income_app'
+    name = "income_app"

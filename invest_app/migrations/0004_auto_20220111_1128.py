@@ -5,24 +5,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('invest_app', '0003_auto_20220110_2307'),
-    ]
+    dependencies = [("invest_app", "0003_auto_20220110_2307")]
 
     operations = [
         migrations.RenameField(
-            model_name='transaction',
-            old_name='actual_amount',
-            new_name='last_closed',
+            model_name="transaction", old_name="actual_amount", new_name="last_closed"
         ),
         migrations.RenameField(
-            model_name='transaction',
-            old_name='expected_amount',
-            new_name='last_profit',
+            model_name="transaction", old_name="expected_amount", new_name="last_profit"
         ),
         migrations.AddField(
-            model_name='stock',
-            name='isin',
-            field=models.CharField(blank=True, help_text=' International Securities Identification Number', max_length=15),
+            model_name="stock",
+            name="isin",
+            field=models.CharField(
+                blank=True,
+                help_text=" International Securities Identification Number",
+                max_length=15,
+            ),
         ),
     ]

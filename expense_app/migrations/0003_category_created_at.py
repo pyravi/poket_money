@@ -6,14 +6,12 @@ import django.utils.timezone
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('expense_app', '0002_auto_20210303_0907'),
-    ]
+    dependencies = [("expense_app", "0002_auto_20210303_0907")]
 
     operations = [
         migrations.AddField(
-            model_name='category',
-            name='created_at',
+            model_name="category",
+            name="created_at",
             field=models.DateTimeField(default=django.utils.timezone.localtime),
-        ),
+        )
     ]

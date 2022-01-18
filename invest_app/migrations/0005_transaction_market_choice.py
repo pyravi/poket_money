@@ -5,14 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('invest_app', '0004_auto_20220111_1128'),
-    ]
+    dependencies = [("invest_app", "0004_auto_20220111_1128")]
 
     operations = [
         migrations.AddField(
-            model_name='transaction',
-            name='market_choice',
-            field=models.IntegerField(choices=[(0, 'Sell'), (1, 'Buy')], default=1),
-        ),
+            model_name="transaction",
+            name="market_choice",
+            field=models.IntegerField(choices=[(0, "Sell"), (1, "Buy")], default=1),
+        )
     ]

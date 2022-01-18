@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ExpenseAppConfig(AppConfig):
-    name = 'expense_app'
+    name = "expense_app"

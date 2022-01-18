@@ -37,6 +37,7 @@ class GoalAdmin(admin.ModelAdmin):
 
 admin.site.register(Sector)
 
+
 @admin.register(Transaction)
 class StockTransactionAdmin(admin.ModelAdmin):
     list_display = [
@@ -55,4 +56,3 @@ class StockAdmin(admin.ModelAdmin):
 
     def User_Name(self, obj):
         return obj.user.get_full_name()
-

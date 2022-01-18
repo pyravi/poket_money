@@ -10,65 +10,59 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('invest_app', '0001_initial'),
+        ("invest_app", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='stock',
-            options={'verbose_name_plural': 'Stocks'},
+            name="stock", options={"verbose_name_plural": "Stocks"}
         ),
-        migrations.RemoveField(
-            model_name='stock',
-            name='actual_amount',
-        ),
-        migrations.RemoveField(
-            model_name='stock',
-            name='expected_amount',
-        ),
-        migrations.RemoveField(
-            model_name='stock',
-            name='interest_rate',
-        ),
-        migrations.RemoveField(
-            model_name='stock',
-            name='invested_amount',
-        ),
-        migrations.RemoveField(
-            model_name='stock',
-            name='invested_date',
-        ),
-        migrations.RemoveField(
-            model_name='stock',
-            name='plan_of_investment_date',
-        ),
-        migrations.RemoveField(
-            model_name='stock',
-            name='qauntity',
-        ),
+        migrations.RemoveField(model_name="stock", name="actual_amount"),
+        migrations.RemoveField(model_name="stock", name="expected_amount"),
+        migrations.RemoveField(model_name="stock", name="interest_rate"),
+        migrations.RemoveField(model_name="stock", name="invested_amount"),
+        migrations.RemoveField(model_name="stock", name="invested_date"),
+        migrations.RemoveField(model_name="stock", name="plan_of_investment_date"),
+        migrations.RemoveField(model_name="stock", name="qauntity"),
         migrations.AddField(
-            model_name='stock',
-            name='created_at',
+            model_name="stock",
+            name="created_at",
             field=models.DateTimeField(default=django.utils.timezone.localtime),
         ),
         migrations.AddField(
-            model_name='stock',
-            name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='auth.user'),
+            model_name="stock",
+            name="user",
+            field=models.ForeignKey(
+                default=1, on_delete=django.db.models.deletion.CASCADE, to="auth.user"
+            ),
             preserve_default=False,
         ),
         migrations.CreateModel(
-            name='Transaction',
+            name="Transaction",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('invested_amount', models.FloatField()),
-                ('qauntity', models.IntegerField()),
-                ('interest_rate', models.FloatField()),
-                ('actual_amount', models.FloatField()),
-                ('expected_amount', models.FloatField()),
-                ('invested_date', models.DateField(auto_now_add=True)),
-                ('plan_of_investment_date', models.DateField()),
-                ('stock', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='invest_app.stock')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("invested_amount", models.FloatField()),
+                ("qauntity", models.IntegerField()),
+                ("interest_rate", models.FloatField()),
+                ("actual_amount", models.FloatField()),
+                ("expected_amount", models.FloatField()),
+                ("invested_date", models.DateField(auto_now_add=True)),
+                ("plan_of_investment_date", models.DateField()),
+                (
+                    "stock",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="invest_app.stock",
+                    ),
+                ),
             ],
         ),
     ]
